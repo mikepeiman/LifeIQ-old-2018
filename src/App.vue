@@ -10,13 +10,18 @@
       <!-- <img src="./assets/logo.png" alt="Vue.js PWA"> -->
       <router-view></router-view>
     </main>
-    <input id="mui-input" />
   </div>
 </template>
 
 <script>
 import Item from './components/Item.vue'
-import 'vue-material/dist/vue-material.css'
+import Vue from 'vue'
+import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
+import 'vue-material/dist/vue-material.min.css'
+
+Vue.use(MdButton)
+Vue.use(MdContent)
+Vue.use(MdTabs)
 // import ItemTitle from './components/ItemTitle.vue'
 // import ItemDescription from './components/ItemDescription.vue'
 // import ItemImage from './components/ItemImage.vue'
