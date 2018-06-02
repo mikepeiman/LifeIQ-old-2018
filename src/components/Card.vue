@@ -50,14 +50,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style  lang="scss" scoped>
+$color-primary: #00ccff;
+$color-primary-accent: adjust-color($color-primary, $lightness: -10);
+
 .list-style-none {
   list-style-type: none;
 }
 .md-button, .md-ripple {
   width: 20px !important;
   color: white;
-  background: #336699;
+  background: $color-primary-accent; //#336699;
   align-self: center;
   border-radius: 2em; 
 }

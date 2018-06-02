@@ -48,6 +48,16 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
       },
+            // this will apply to both plain `.scss` files
+      // AND `<style lang="scss">` blocks in `.vue` files
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
