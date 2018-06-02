@@ -1,8 +1,6 @@
 <template>
-  <div id="card">
-  	<header>{{ title }}</header>
-  	<div v-html="content"></div>
-      <form class="form-field">
+  <div id="card" class="flex-container">
+      <form>
         <md-field class="flex-field">
           <label>Enter a new item</label>
           <md-input id="itemForm" v-model="inputField" v-on:keyup.enter="addItem"></md-input>
@@ -12,14 +10,10 @@
           <md-icon>+</md-icon>
         </md-button>
       </form>
-      <!-- <div>
-        <input id="itemForm" v-on:keyup.enter="addItem">
-        <button v-on:click="addItem">Add Dinosaur</button>
-      </div> -->
-    <ul class="list-style-none">
-        <li v-for="(item, index) in items">
-          <md-button v-on:click="deleteItem(index)">X</md-button>
-          {{ item.text }}
+    <ul class="list-style-none flex-column item-list">
+        <li v-for="(item, index) in items" class="list-item">
+          <div class="item-text">{{ item.text }}</div>
+          <md-button v-on:click="deleteItem(index)" class="md-button">X</md-button>          
         </li>
     </ul>
   </div>
@@ -27,11 +21,9 @@
 
 <script>
 export default {
-  name: 'card',
+  name: 'Card',
   data () {
     return {
-      title: "Mike's cool card",
-      content: "This is some <strong>critical</strong> info about <em>critical</em> stuff. It's critical. Cool.",
       inputField: '',
       items: [
         { text: 'Apples' },
@@ -47,11 +39,8 @@ export default {
         this.items.push({
           text: input.value
         })
-        console.log('item ' + input.value + ' added')
-        input.localValue = ''
-        input.model = ''
         this.inputField = ''
-        // this.input.value = ''
+        // input.value = ''
       }
     },
     deleteItem: function (index) {
@@ -65,25 +54,46 @@ export default {
 .list-style-none {
   list-style-type: none;
 }
-.md-icon-button {
-  width: 4em;
-  height: 4em;  
-  font-weight: 900;  
+.md-button, .md-ripple {
+  width: 20px !important;
   color: white;
   background: #336699;
   align-self: center;
+  border-radius: 2em; 
 }
-.form-field {
+.flex-container {
   display: flex;
   justify-content: center;
-  /* align-content: center;  
-  align-items: center;
-  width: 50%; */
+}
+.flex-column {
+  flex-direction: column;
 }
 .flex-field {
   width: 20em;  
 }
 .entry {
   background: blue;
+}
+ul {
+  display: flex;
+  /* align-items: center; */
+  /* align-content: center; */
+  justify-content: center;
+}
+.item-list {
+  background: rgba(0,0,0,0.25);
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 5px;
+  display: flex;
+}
+.list-item {
+  display: flex;
+  justify-content: space-between;
+}
+.item-text {
+  align-self: center;
+  justify-self:center;
+  padding: 1em;
 }
 </style>

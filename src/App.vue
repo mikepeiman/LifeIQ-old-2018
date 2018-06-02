@@ -1,20 +1,22 @@
 <template>
   <div id="app">
     <header>
-      <span>LifeIQ Progressive WebApp</span>
+      <span><router-link to="/">Home</router-link></span>
+      <span><router-link to="Tasks">Tasks</router-link></span>
+      <span><router-link to="Timer">Timer</router-link></span>
+      <span><router-link to="Game">Game</router-link></span>
     </header>
-<!--     <item-image />
-    <item-title />
-    <item-description /> -->
     <main>
-      <!-- <img src="./assets/logo.png" alt="Vue.js PWA"> -->
       <router-view></router-view>
     </main>
   </div>
 </template>
 
 <script>
-import Item from './components/Item.vue'
+import Card from './components/Card.vue'
+import Tasks from './components/Tasks.vue'
+import Timer from './components/Timer.vue'
+import Game from './components/Game.vue'
 import Vue from 'vue'
 import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
 import 'vue-material/dist/vue-material.min.css'
@@ -22,16 +24,13 @@ import 'vue-material/dist/vue-material.min.css'
 Vue.use(MdButton)
 Vue.use(MdContent)
 Vue.use(MdTabs)
-// import ItemTitle from './components/ItemTitle.vue'
-// import ItemDescription from './components/ItemDescription.vue'
-// import ItemImage from './components/ItemImage.vue'
 
 export default {
   components: {
-    Item
-    // ItemImage,
-    // ItemTitle,
-    // ItemDescription
+    Card,
+    Tasks,
+    Timer,
+    Game
   },
   name: 'app'
 }
@@ -56,20 +55,30 @@ main {
 
 header {
   margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
+  padding: 0.5em;
   background-color: #35495E;
   color: #ffffff;
+  display: flex;
+  justify-content: space-between;
 }
 
 header span {
-  display: block;
-  position: relative;
   font-size: 20px;
   line-height: 1;
   letter-spacing: .02em;
   font-weight: 400;
   box-sizing: border-box;
-  padding-top: 16px;
+  padding: 0.65em;
+  margin: 1em;
+  background: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+header span:hover {
+    background: #ccddff;
+    text-decoration: none;
+  }
+.md-theme-default a:not(.md-button):hover {
+  text-decoration: none;
 }
 </style>

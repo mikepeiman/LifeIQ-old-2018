@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Item from '@/components/Item'
-import Card from '@/components/Card'
+import Home from '@/components/Home'
+import Tasks from '@/components/Tasks'
+import Timer from '@/components/Timer'
+import Game from '@/components/Game'
+
 // import { MdButton, MdContent, MdTabs, MdField, MdInput } from 'vue-material/dist/components'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
@@ -19,24 +21,24 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/hello',
-      name: 'Hello',
-      component: Hello
-    },
-    {
-      path: '/item',
-      name: 'Item',
-      component: Item
-    },
-    {
       path: '/',
       name: 'Home',
-      component: Item
+      component: Home
     },
     {
-      path: '/card',
-      name: 'Card',
-      component: Card
+      path: '/game',
+      name: 'Game',
+      component: Game
+    },
+    {
+      path: '/timer',
+      name: 'Timer',
+      component: Timer
+    },
+    {
+      path: '/Tasks',
+      name: 'Tasks',
+      component: Tasks
     }
   ]
 })

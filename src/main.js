@@ -3,12 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import { MdButton, MdContent, MdTabs, MdInput, MdField } from 'vue-material/dist/components'
-import 'vue-material/dist/vue-material.css'
 
 Vue.config.productionTip = false
-// Vue.use(MdInput)
-// Vue.use(MdField)
 
 /* eslint-disable no-new */
 new Vue({
