@@ -1,16 +1,16 @@
 <template>
-  <div id="card" class="flex-container">
-      <form>
+  <div id="card" class="grid-container-1">
+      <form class="grid-container-2 grid-column-2 flex-container">
         <md-field class="flex-field">
           <label>Enter a new item</label>
           <md-input id="itemForm" v-model="inputField" v-on:keyup.enter="addItem"></md-input>
           <span class="md-helper-text">Add an item to your list</span>
         </md-field>
-        <md-button v-on:click="addItem" class="md-icon-button md-raised md-primary">
+        <md-button v-on:click="addItem" class="md-icon-button md-raised md-primary" id="addButton">
           <md-icon>+</md-icon>
         </md-button>
       </form>
-    <ul class="list-style-none flex-column item-list">
+    <ul class="list-style-none flex-column item-list grid-column-3">
         <li v-for="(item, index) in items" class="list-item">
           <div class="item-text">{{ item.text }}</div>
           <md-button v-on:click="deleteItem(index)" class="md-button">X</md-button>          
@@ -54,19 +54,52 @@ export default {
 $color-primary: #00ccff;
 $color-primary-accent: adjust-color($color-primary, $lightness: -10);
 
+
 .list-style-none {
   list-style-type: none;
 }
 .md-button, .md-ripple {
-  width: 20px !important;
+  min-width: 2.5em !important;
   color: white;
   background: $color-primary-accent; //#336699;
-  align-self: center;
-  border-radius: 2em; 
+  align-self: flex-start;
+}
+#addButton {
+  margin-top: 20px;
+}
+.md-icon {
+  padding-bottom: 0.3em;
+}
+@media screen and (min-width: 900px) {
+  .grid-container-1 {
+  display: grid;
+  grid-template-columns: 5% 45% 45% 5%;
+  grid-template-rows: 100%;
+  }
+}
+.grid-container-1 {
+  display: grid;
+  grid-template-columns: 15% 35% 35% 15%;
+  grid-template-rows: 100%;
+}
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 100%;
+}
+.grid-column-1 {
+  grid-column-start: 1;
+}
+.grid-column-2 {
+  grid-column-start: 2;
+}
+.grid-column-3 {
+  grid-column-start: 3;
 }
 .flex-container {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 .flex-column {
   flex-direction: column;

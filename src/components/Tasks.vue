@@ -1,14 +1,17 @@
 <template>
 <div id="tasks">
     <Card />
+    <Card2 />
 </div>
 </template>
 
 <script>
 import Card from './Card.vue'
+import Card2 from './Card2.vue'
 export default {
   components: {
-    Card
+    Card,
+    Card2
   },
   name: 'tasks'
 }
@@ -17,9 +20,10 @@ export default {
 <style>
   #tasks {
     display: flex;
-    justify-content: center;  
+    justify-content: center;
+    flex-direction: column;
   }
   .md-button {
-    width: 20px !important;
+   width: 20px !important;
   }
 </style>
