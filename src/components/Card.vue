@@ -11,7 +11,7 @@
         </md-button>
       </form>
     <ul class="list-style-none flex-column item-list grid-column-3">
-        <li v-for="(item, index) in items" class="list-item">
+        <li v-for="(item, index) in items" v-if="item.text !== null" class="list-item">
           <div class="item-text">{{ item.text }}</div>
           <md-button v-on:click="deleteItem(index)" class="md-button">X</md-button>          
         </li>
@@ -28,7 +28,9 @@ export default {
       items: [
         { text: 'Apples' },
         { text: 'Oranges' },
-        { text: 'Peaches' }
+        { text: 'Peaches' },
+        { text: null },
+        { text: 'Fifth' }
       ]
     }
   },
