@@ -1,29 +1,23 @@
 <template>
-  <div id="card2" class="grid-container-1">
-      <form class="grid-container-2 grid-column-2 flex-container">
-        <md-field class="input-field grid-column-2 ">
+  <div id="card2">
+      <form class="flex-container">
+        <md-field class="input-field">
           <md-input id="num1" v-model="num1" v-on:keyup.enter="calcItems"></md-input>
           <span class="md-helper-text">Number</span>
         </md-field>
-        <md-button class="md-icon-button md-raised md-primary" id="operationButton1">
-          <md-icon>X</md-icon>
-        </md-button>
-        <md-field class="input-field grid-column-3">
+        <button id="operationButton">X</button>
+        <md-field class="input-field">
           <md-input id="num2" v-model="num2" v-on:keyup.enter="addItem2"></md-input>
           <span class="md-helper-text">Number</span>
         </md-field>
-        <md-button v-on:click="calcItems" class="md-icon-button md-raised md-primary" id="calcButton">
-          <md-icon>=</md-icon>
-        </md-button>
-        <md-field class="output-field grid-column-4">
-          <md-input id="result"></md-input>
-          <span class="md-helper-text">Result</span>
-        </md-field>
+        <md-button v-on:click="calcItems" class="md-raised md-primary" id="calcButton">Calculate</md-button>
       </form>
-    <ul class="list-style-none flex-column item-list grid-column-4">
-        <li v-for="(item, index) in results" class="list-item">
-          <div class="item-text">{{ item.text }}</div>
-          <md-button v-on:click="deleteItem2(index)" class="md-button">X</md-button>          
+    <ul class="list-style-none flex-column item-list">
+        <li v-for="(item, index) in results" v-if="item.value1 !== null" class="list-item">
+          <div class="item-text">{{ item.value1 }}</div>
+          <div class="item-text">{{ item.value2 }}</div>
+          <div class="item-text">{{ item.result }}</div>
+          <md-button v-on:click="deleteResult(index)" class="md-button">X</md-button>          
         </li>
     </ul>
   </div>
@@ -37,8 +31,11 @@ export default {
       num1: '',
       num2: '',
       results: [
-        { text: '' }
-      ]
+        {
+          value1: null,
+          value2: null,
+          result: null
+        }]
     }
   },
   methods: {
@@ -47,14 +44,15 @@ export default {
       var num2 = document.getElementById('num2')
       if (num1.value !== '' && num2.value !== '') {
         this.results.push({
-          text: num1.value + ' * ' + num2.value + ' = ' + num1.value * num2.value
+          value1: num1.value,
+          value2: num2.value,
+          result: num1.value * num2.value
         })
-        this.num1 = ''
-        this.num2 = ''
-        // input.value = ''
+        this.value1 = ''
+        this.value2 = ''
       }
     },
-    deleteItem2: function (index) {
+    deleteResult: function (index) {
       this.results.splice(index, 1)
     }
   }
@@ -77,6 +75,18 @@ $color-primary-accent: adjust-color($color-primary, $lightness: -10);
 }
 #addButton2 {
   margin-top: 10px;
+}
+#calcButton {
+  margin-top: 10px;
+}
+#operationButton {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  font-weight: 900;
+  font-size: 1.5em;
+  color: $color-primary-accent;
+  padding: 0 1em 1em 1em;
 }
 #operationButton1 {
   margin-top: 10px;
@@ -146,6 +156,7 @@ ul {
 .list-item {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
 }
 .item-text {
   align-self: center;
