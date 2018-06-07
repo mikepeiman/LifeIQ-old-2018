@@ -5,6 +5,7 @@
       <span><router-link to="Tasks">Tasks</router-link></span>
       <span><router-link to="Timer">Timer</router-link></span>
       <span><router-link to="Game">Game</router-link></span>
+      <span><router-link to="Burst">Burst</router-link></span>
     </header>
     <main>
       <router-view></router-view>
@@ -17,6 +18,7 @@ import Card from './components/Card.vue'
 import Tasks from './components/Tasks.vue'
 import Timer from './components/Timer.vue'
 import Game from './components/Game.vue'
+import Burst from './components/Burst.vue'
 import Vue from 'vue'
 import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
 import 'vue-material/dist/vue-material.min.css'
@@ -30,7 +32,8 @@ export default {
     Card,
     Tasks,
     Timer,
-    Game
+    Game,
+    Burst
   },
   name: 'app'
 }

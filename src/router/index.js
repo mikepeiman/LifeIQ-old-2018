@@ -4,18 +4,17 @@ import Home from '@/components/Home'
 import Tasks from '@/components/Tasks'
 import Timer from '@/components/Timer'
 import Game from '@/components/Game'
+import Burst from '@/components/Burst'
 
 // import { MdButton, MdContent, MdTabs, MdField, MdInput } from 'vue-material/dist/components'
 import VueMaterial from 'vue-material'
+import { TweenMax, TweenLite, SteppedEase } from 'gsap/all'
+// import gsap from 'gsap/TweenMax'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 
-// Vue.use(MdButton)
-// Vue.use(MdContent)
-// Vue.use(MdTabs)
-// Vue.use(MdField)
-// Vue.use(MdInput)
 Vue.use(VueMaterial)
+// Vue.use(gsap)
 Vue.use(Router)
 
 export default new Router({
@@ -36,9 +35,14 @@ export default new Router({
       component: Timer
     },
     {
-      path: '/Tasks',
+      path: '/tasks',
       name: 'Tasks',
       component: Tasks
+    },
+    {
+      path: '/burst',
+      name: 'Burst',
+      component: Burst
     }
   ]
 })
