@@ -1,6 +1,8 @@
 <template>
 <div id="tasks">
     <Card />
+    <h2>Table with calculations</h2>
+    <p>This will gradually evolve into a unique tracking app idea I've been conceptually developing for many years.</p>
     <Card2 />
 </div>
 </template>

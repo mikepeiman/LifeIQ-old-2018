@@ -1,7 +1,6 @@
 <template>
     <div id="home">
       <Hello />
-      <Card />
     </div>
 </template>
 
