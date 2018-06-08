@@ -10,6 +10,7 @@ import Card from './Card.vue'
 import Tasks from './Tasks.vue'
 import Timer from './Timer.vue'
 import Burst from './Burst.vue'
+import Protopage from './Protopage.vue'
 
 export default {
   components: {
@@ -17,7 +18,8 @@ export default {
     Card,
     Tasks,
     Timer,
-    Burst
+    Burst,
+    Protopage
   },
   name: 'home'
 }

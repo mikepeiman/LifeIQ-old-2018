@@ -5,6 +5,7 @@ import Tasks from '@/components/Tasks'
 import Timer from '@/components/Timer'
 import Game from '@/components/Game'
 import Burst from '@/components/Burst'
+import Protopage from '@/components/Protopage'
 
 // import { MdButton, MdContent, MdTabs, MdField, MdInput } from 'vue-material/dist/components'
 import VueMaterial from 'vue-material'
@@ -43,6 +44,11 @@ export default new Router({
       path: '/burst',
       name: 'Burst',
       component: Burst
+    },
+    {
+      path: '/protovue-grid',
+      name: 'Protopage',
+      component: Protopage
     }
   ]
 })

@@ -3,7 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import Protovue from 'v1labs-protovue'
+Vue.use(Protovue)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

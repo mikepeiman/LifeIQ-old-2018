@@ -6,10 +6,12 @@
       <span><router-link to="Timer">Timer</router-link></span>
       <span><router-link to="Game">Game</router-link></span>
       <span><router-link to="Burst">Burst</router-link></span>
+      <span><router-link to="Protovue-grid">Protovue-Grid</router-link></span>
     </header>
     <main>
       <router-view></router-view>
     </main>
+    <!-- <v1-grid guides size="10x12" gap="10"></v1-grid> -->
   </div>
 </template>
 
@@ -19,6 +21,8 @@ import Tasks from './components/Tasks.vue'
 import Timer from './components/Timer.vue'
 import Game from './components/Game.vue'
 import Burst from './components/Burst.vue'
+import Protopage from './components/Protopage.vue'
+
 import Vue from 'vue'
 import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
 import 'vue-material/dist/vue-material.min.css'
@@ -27,13 +31,15 @@ Vue.use(MdButton)
 Vue.use(MdContent)
 Vue.use(MdTabs)
 
+
 export default {
   components: {
     Card,
     Tasks,
     Timer,
     Game,
-    Burst
+    Burst,
+    Protopage
   },
   name: 'app'
 }
