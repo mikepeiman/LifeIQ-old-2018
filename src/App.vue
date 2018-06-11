@@ -1,14 +1,7 @@
 <template>
   <div id="app">
-    <header>
-      <span><router-link to="/">Home</router-link></span>
-      <span><router-link to="Tasks">Tasks</router-link></span>
-      <span><router-link to="Timer">Timer</router-link></span>
-      <span><router-link to="Game">Game</router-link></span>
-      <span><router-link to="Burst">Burst</router-link></span>
-      <span><router-link to="Protovue-grid">Protovue-Grid</router-link></span>
-    </header>
-    <main>
+    <Navbar />
+    <main>      
       <router-view></router-view>
     </main>
     <!-- <v1-grid guides size="10x12" gap="10"></v1-grid> -->
@@ -16,6 +9,7 @@
 </template>
 
 <script>
+import Navbar from './components/Navbar.vue'
 import Card from './components/Card.vue'
 import Tasks from './components/Tasks.vue'
 import Timer from './components/Timer.vue'
@@ -26,7 +20,10 @@ import Protopage from './components/Protopage.vue'
 import Vue from 'vue'
 import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
 import 'vue-material/dist/vue-material.min.css'
-
+import Buefy from 'buefy'
+import "buefy/lib/buefy.css"
+import "./style.css"
+Vue.use(Buefy)
 Vue.use(MdButton)
 Vue.use(MdContent)
 Vue.use(MdTabs)
@@ -34,6 +31,7 @@ Vue.use(MdTabs)
 
 export default {
   components: {
+    Navbar,
     Card,
     Tasks,
     Timer,

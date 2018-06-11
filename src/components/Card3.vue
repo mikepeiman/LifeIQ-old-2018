@@ -1,5 +1,5 @@
 <template>
-  <div id="card2">
+  <div id="Calculator">
       <form class="flex-container">
         <md-field class="input-field">
           <md-input id="num1" v-model="num1" v-on:keyup.enter="calcItems"></md-input>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'Card2',
+  name: 'Calculator',
   data () {
     return {
       num1: '',

@@ -7,7 +7,7 @@
         </md-field>
         <button id="operationButton">X</button>
         <md-field class="input-field">
-          <md-input id="num2" v-model="num2" v-on:keyup.enter="addItem2"></md-input>
+          <md-input id="num2" v-model="num2" v-on:keyup.enter="calcItems"></md-input>
           <span class="md-helper-text">Number</span>
         </md-field>
         <md-button v-on:click="calcItems" class="md-raised md-primary" id="calcButton">Calculate</md-button>
@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style  lang="scss" scoped>
+<style lang="scss" scoped>
 $color-primary: #00ccff;
 $color-primary-accent: adjust-color($color-primary, $lightness: -10);
 

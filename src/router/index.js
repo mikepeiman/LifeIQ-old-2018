@@ -9,10 +9,10 @@ import Protopage from '@/components/Protopage'
 
 // import { MdButton, MdContent, MdTabs, MdField, MdInput } from 'vue-material/dist/components'
 import VueMaterial from 'vue-material'
-import { TweenMax, TweenLite, SteppedEase } from 'gsap/all'
+// import { TweenMax, TweenLite, SteppedEase } from 'gsap/all'
 // import gsap from 'gsap/TweenMax'
-import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
+// import 'vue-material/dist/vue-material.min.css'
+// import 'vue-material/dist/theme/default.css'
 
 Vue.use(VueMaterial)
 // Vue.use(gsap)
